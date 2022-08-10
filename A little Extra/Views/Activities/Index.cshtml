@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Activity>
+
+@{
+	ViewData["Title"] = "Activities";
+}
+
+<section class="my-sm-5">
+	<div class="container">
+		<div class="section-header d-flex mb-5">
+			<h1 class="h-02 flex-grow-1">Available activities </h1>
+			<a class="btn btn-primary btn-lg" asp-controller="Activities"
+			   asp-action="CreateActivity">Post Activity</a>
+		</div>
+		<div class="activities">
+			@foreach (var item in Model)
+			{
+				<div class="card br-20 mb-5 c-card">
+					<div class="card-body">
+						<div class="d-flex align-items-center mb-2">
+							<h5 class="card-title h-04 text-black flex-grow-1">@item.Name @item.ActivityId</h5>
+							<div class="d-flex align-items-center">
+								<p class="p-sm text-prim-color mr-06">@item.Points Points</p>
+								<p class="p-sm text-grey-03">@item.StartDate.ToString("dd MMM yyyy")</p>
+								<p class="p-sm mx-2">-</p>
+								<p class="p-sm text-grey-03">@item.EndDate.ToString("dd MMM yyyy")</p>
+							</div>
+						</div>
+						<p class="card-text mb-4">@item.Description</p>
+						<div class="">
+							<a asp-controller="Activities" asp-action="ActivityDetails" asp-route-id="@item.ActivityId" class="btn btn-outline-primary mr-3">View details</a>
+							<a href="#" class="btn btn-primary">Participate</a>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</section>
+

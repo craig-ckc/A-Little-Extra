@@ -1,0 +1,37 @@
+﻿@model Activity
+
+@{
+	ViewData["Title"] = "Activity Details";
+}
+
+<section class="my-sm-5">
+	<div class="container">
+		<div class="section-header d-flex mb-5">
+			<h1 class="h-02 flex-grow-1">@Model.Name</h1>
+		</div>
+		<div class="w-75">
+			<div class="mb-4">
+				<h2 class="h-03 mb-3">Activity Description</h2>
+				<p>@Model.Description</p>
+			</div>
+			<div class="info d-flex mb-5">
+				<div class="info-item">
+					<div class="text-grey-03">@Html.DisplayNameFor(model => model.Points)</div>
+					<div class="h-04">@(Model.Points) points</div>
+				</div>
+				<div class="info-item">
+					<div class="text-grey-03">@Html.DisplayNameFor(model => model.StartDate)</div>
+					<div class="h-04">@Model.StartDate.ToString("dd MMM yyyy")</div>
+				</div>
+				<div class="info-item">
+					<div class="text-grey-03">@Html.DisplayNameFor(model => model.EndDate)</div>
+					<div class="h-04">@Model.StartDate.ToString("dd MMM yyyy")</div>
+				</div>
+			</div>
+			<div class="mb-5">
+				<a class="btn btn-primary btn-lg" asp-area="" asp-controller="Activities"
+				   asp-action="Index">Participate</a>
+			</div>
+		</div>
+	</div>
+</section>

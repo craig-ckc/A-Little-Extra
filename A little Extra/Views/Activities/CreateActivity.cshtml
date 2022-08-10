@@ -1,0 +1,90 @@
+﻿@model Activity
+
+@{
+	ViewData["Title"] = "Activity Details";
+}
+
+<section class="my-sm-5">
+	<div class="container">
+		<div class="section-header d-flex mb-5">
+			<h1 class="h-02 flex-grow-1">Activity Details</h1>
+		</div>
+		<div class="row">
+			<div class="col-md-7">
+				<div class="section-header d-flex mb-5">
+					<h1 class="h-04 flex-grow-1">Activity Details</h1>
+				</div>
+				<form asp-action="ActivityDetails" class="row g-3 w-90">
+					<div class="col-md-12">
+						<label asp-for="Name" class="form-label">@Html.DisplayNameFor(model => model.Name)</label>
+						<input asp-for="Name" type="text" class="form-control" id="inputEmail4" placeholder="@Html.DisplayNameFor(model => model.Name)">
+						<span asp-validation-for="Name" class="invalid-feedback"></span>
+					</div>
+					<div class="col-12">
+						<label asp-for="Description" class="form-label">@Html.DisplayNameFor(model => model.Description)</label>
+						<textarea asp-for="Description" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="@Html.DisplayNameFor(model => model.Description)"></textarea>
+						<span asp-validation-for="Description" class="invalid-feedback"></span>
+					</div>
+					<div class="col-md-4">
+						<label asp-for="StartDate" class="form-label">@Html.DisplayNameFor(model => model.StartDate)</label>
+						<input asp-for="StartDate" type="text" class="form-control" id="inputZip" placeholder="@Html.DisplayNameFor(model => model.StartDate)">
+						<span asp-validation-for="StartDate" class="invalid-feedback"></span>
+					</div>
+					<div class="col-md-4">
+						<label asp-for="EndDate" class="form-label">@Html.DisplayNameFor(model => model.EndDate)</label>
+						<input asp-for="EndDate" type="text" class="form-control" id="inputZip" placeholder="@Html.DisplayNameFor(model => model.EndDate)">
+						<span asp-validation-for="EndDate" class="invalid-feedback"></span>
+					</div>
+					<div class="col-md-4 mb-6">
+						<label asp-for="Points" class="form-label">@Html.DisplayNameFor(model => model.Points)</label>
+						<input asp-for="Points" type="text" class="form-control" id="inputZip" placeholder="@Html.DisplayNameFor(model => model.Points)">
+						<span asp-validation-for="Points" class="invalid-feedback"></span>
+					</div>
+					<div class="col-8 d-grid gap-2">
+						<button type="submit" class="btn btn-primary mb-2">Add award</button>
+						<div class="row">
+							<div class="col-md-6">
+								<button asp-action="Index" class="btn btn-outline-primary w-100">Cancel</button>
+							</div>
+							<div class="col-md-6">
+								<button type="submit" value="ActivityDetails" class="btn btn-primary w-100">Post Activity</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-5">
+				<div class="section-header d-flex mb-5">
+					<h1 class="h-04 flex-grow-1">Activity Details</h1>
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Mark</td>
+							<td>Otto</td>
+							<td>
+								<a class="btn btn-outline-primary btn-sm">Post Activity</a>
+								<a class="btn btn-outline-primary btn-sm">Post Activity</a>
+								</tb>
+						</tr>
+						<tr>
+							<td>Jacob</td>
+							<td>Thornton</td>
+							<td>
+								<a class="btn btn-outline-primary btn-sm">Post Activity</a>
+								<a class="btn btn-outline-primary btn-sm">Post Activity</a>
+								</tb>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
